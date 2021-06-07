@@ -47,18 +47,6 @@ async function getSongs(url){
     addSongToDom(data)
 }
 
-// async function getLyrics(artist,title){
-//     const res = await fetch(`${ApiUrl}/v1/${artist}/${title}`)
-//     const data = await res.json()
-
-//     const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g,'</br>')
-
-//     result.innerHTML=`<h2><strong>${artist}</strong>- ${title}</h2>
-//     <span>${lyrics}</span>`
-
-//     navigation.innerHTML=''
-// }
-
 form.addEventListener('submit', e => {
     e.preventDefault()
 
@@ -67,7 +55,7 @@ form.addEventListener('submit', e => {
     if(!searchValue){
         alert('Please enter value to search')
     }else{
-        fetchSongs()
+        fetchSongs(searchValue)
     }
 })
 
